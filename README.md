@@ -1,174 +1,97 @@
-# Yu-Gi-Oh! Deck Builder - Enhanced Edition
+# Yu-Gi-Oh! Deck Builder
 
-A completely revamped graphical user interface for building and managing Yu-Gi-Oh! card decks, developed in Python using the tkinter library with modern styling and enhanced functionality.
+A graphical user interface for building and managing Yu-Gi-Oh! card decks, developed in Python using the tkinter library.
 
-## 🚀 Major Improvements
+## Features
 
-### Visual Enhancements
-- **Modern Dark/Light Themes**: Professional color schemes with hover effects
-- **Improved Layout**: Better spacing, borders, and visual hierarchy
-- **Emoji Icons**: Visual indicators for better user experience
-- **Status Bar**: Real-time status updates at the bottom
-- **Centered Window**: Application opens centered on screen
-
-### Functionality Upgrades
-- **20+ Pre-loaded Cards**: Expanded initial card collection including:
-  - Dark Magician, Blue-Eyes White Dragon, Red-Eyes Black Dragon
-  - Exodia, Dark Magician Girl, Kuriboh, Time Wizard
-  - And many more popular cards!
-- **Better Search**: Real-time filtering and improved search results
-- **Deck Management**: Enhanced add/remove functionality with duplicate prevention
-- **Import Feature**: Import cards from text files
-- **Keyboard Shortcuts**: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit)
-
-### Technical Improvements
-- **Threaded Image Loading**: Prevents UI freezing when loading card images
-- **Better Error Handling**: Comprehensive error messages and status updates
-- **Theme Consistency**: All widgets properly themed in both light and dark modes
-- **Performance**: Optimized card loading and filtering
-
-## 🎨 Theme System
-
-The application features two beautiful themes:
-
-### Dark Theme (Default)
-- Background: #2c3e50 (Dark blue-gray)
-- Text: #ecf0f1 (Light gray)
-- Accent Colors: Professional blues and reds
-
-### Light Theme
-- Background: #ecf0f1 (Light gray)
-- Text: #2c3e50 (Dark blue-gray)
-- Accent Colors: Bright blues and oranges
-
-## 📋 Features
-
-### Core Functionality
-- **Card Search**: Real-time search with API integration
-- **Deck Building**: Add/remove cards with visual feedback
-- **Card Details**: High-quality images and comprehensive information
+- **Card Search**: Search for Yu-Gi-Oh! cards by name using the YGOPRODeck API
+- **Deck Management**: Add, remove, and organize cards in your deck
+- **Card Details**: View detailed information including images, stats, and descriptions
+- **Theme Support**: Toggle between light and dark themes
 - **File Operations**: Save and load deck configurations
-- **Theme Switching**: Toggle between light and dark modes
+- **User-Friendly Interface**: Intuitive layout with clear navigation
 
-### Enhanced Features
-- **Deck Counter**: Live count of cards in current deck
-- **Import Cards**: Bulk import from text files
-- **Keyboard Navigation**: Full keyboard support
-- **Hover Effects**: Interactive button hover states
-- **Status Updates**: Real-time operation feedback
+## Requirements
 
-## 🛠️ Installation
+- Python 3.6+
+- Required packages:
+  - `requests` - For API communication
+  - `Pillow` - For image handling
 
-1. Ensure you have Python 3.6+ installed
-2. Install required dependencies:
+## Installation
+
+1. Clone or download this repository
+2. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-## 🚀 Usage
+## Usage
 
-Run the enhanced application:
+Run the application:
 ```bash
-python yugioh_deck_builder_enhanced.py
+python yugioh_deck_builder.py
 ```
 
-Or use the batch file (Windows):
-```bash
-run_enhanced.bat
+### Main Interface
+
+The application features three main sections:
+
+1. **Left Panel**: Available cards list with search functionality
+2. **Middle Panel**: Current deck list with management buttons
+3. **Right Panel**: Card details display with image and statistics
+
+### Menu Options
+
+- **File Menu**:
+  - New Deck: Start with a fresh deck
+  - Open Deck: Load a previously saved deck
+  - Save Deck: Save your current deck configuration
+  - Exit: Close the application
+
+- **View Menu**:
+  - Light Theme: Switch to light color scheme
+  - Dark Theme: Switch to dark color scheme
+
+### How to Use
+
+1. **Search for Cards**: Type a card name in the search bar and press Enter or click "Search"
+2. **Add to Deck**: Select a card from the available list and click "Add to Deck"
+3. **View Details**: Click on any card in either list to see its details
+4. **Manage Deck**: Use the buttons to remove cards or clear the entire deck
+5. **Save/Load**: Use the File menu to save your deck or load a previous one
+
+## API Integration
+
+The application uses the YGOPRODeck API (https://db.ygoprodeck.com/api/v7/cardinfo.php) to fetch:
+- Card information (name, type, stats, description)
+- Card images
+- Card attributes and properties
+
+## File Format
+
+Decks are saved as JSON files with the following structure:
+```json
+[
+  {
+    "id": "46986414",
+    "name": "Dark Magician",
+    "type": "Normal Monster"
+  },
+  ...
+]
 ```
 
-### Keyboard Shortcuts
-- `Ctrl+N` - New Deck
-- `Ctrl+O` - Open Deck
-- `Ctrl+S` - Save Deck
-- `Ctrl+Q` - Quit Application
-- `Enter` - Execute Search
+## Troubleshooting
 
-### File Formats
-- **Deck Files**: JSON format with card information
-- **Import Files**: Text files with one card name per line
+- **API Connection Issues**: Ensure you have an active internet connection
+- **Image Loading**: Some cards may not have images available
+- **Theme Switching**: The theme change applies to most widgets but may not affect all visual elements
 
-## 📁 Project Structure
+## Contributing
 
-```
-YU-GI-OH! CardDeck/
-├── yugioh_deck_builder_enhanced.py  # Main application
-├── yugioh_deck_builder.py          # Original version
-├── requirements.txt                # Dependencies
-├── run_enhanced.bat               # Windows launcher
-├── run.bat                        # Original launcher
-├── README_ENHANCED.md             # This file
-├── README.md                      # Original documentation
-└── test_*.py                      # Test scripts
-```
+Feel free to submit issues and enhancement requests!
 
-## 🔧 Technical Details
-
-### Dependencies
-- `requests` - API communication with YGOPRODeck
-- `Pillow` - Image processing and display
-- `tkinter` - GUI framework (built-in with Python)
-
-### API Integration
-The application uses the YGOPRODeck API:
-- Endpoint: `https://db.ygoprodeck.com/api/v7/cardinfo.php`
-- Fetches card data, images, and information
-- Handles errors and timeouts gracefully
-
-### Performance Features
-- Background image loading prevents UI freezing
-- Cached card data for better performance
-- Efficient filtering and search algorithms
-
-## 🎯 Usage Tips
-
-1. **Search Efficiently**: Use real-time search for quick filtering
-2. **Theme Preference**: Switch themes from the View menu
-3. **Bulk Operations**: Use import/export for large decks
-4. **Keyboard Shortcuts**: Learn the shortcuts for faster workflow
-5. **Status Bar**: Watch the status bar for operation feedback
-
-## 🐛 Troubleshooting
-
-### Common Issues
-- **API Connection**: Ensure internet connectivity for card data
-- **Image Loading**: Some cards may not have available images
-- **Large Decks**: Very large decks may take time to load
-
-### Getting Help
-If you encounter issues:
-1. Check your internet connection
-2. Verify all dependencies are installed
-3. Check the status bar for error messages
-
-## 📝 Version History
-
-### v2.0 - Enhanced Edition
-- Complete visual overhaul
-- 20+ pre-loaded popular cards
-- Theme system with light/dark modes
-- Improved deck management
-- Status bar and real-time feedback
-- Keyboard shortcuts
-- Import/export functionality
-
-### v1.0 - Original
-- Basic functionality
-- Limited card selection
-- Simple interface
-
-## 👥 Contributing
-
-Feel free to contribute by:
-- Reporting bugs and issues
-- Suggesting new features
-- Improving documentation
-- Adding new card sets
-
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
-
----
-
-**Enjoy building your ultimate Yu-Gi-Oh! deck!** 🃏

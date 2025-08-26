@@ -1,0 +1,6 @@
+Testing requests module...
+HTTPBin status: 200
+Testing YGOPRODeck API...
+YGOPRODeck status: 200
+Cards found: 13868
+SUCCESS: API is working!
